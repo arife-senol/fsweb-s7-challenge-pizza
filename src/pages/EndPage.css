@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.endPageDiv {
+    background-color: #ce2829;
+    font-family: "Roboto Condensed";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #faf7f2;
+    height: 100vh;
+}
+
+.endPageDiv p {
+    font-size: 86px;
+    font-weight: 300;
+    line-height: 92px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+}

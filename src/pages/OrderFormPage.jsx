@@ -43,42 +43,38 @@ export default function OrderFormPage() {
         (item) => item !== ingredient
       );
       setIngredients(updatedIngredients);
-    } else if (currentIngredients.length <= 10) {
+    } else if (currentIngredients.length < 10) {
       // Eğer ingredient mevcut değilse ve liste 10 öğeden küçükse, listeye ekle
       setIngredients([...currentIngredients, ingredient]);
     }
   }
 
- function totalPrice() {
-  return (pizzaPrice + ingredients.length * ingredientsPrice)*quantity
- }
- function formValidate() {
-  const checkErrors = {}
-  
-  if(!name || name.length<3){
-    checkErrors.name="İsim en az 3 karakter olmalıdır";
+  function totalPrice() {
+    return (pizzaPrice + ingredients.length * ingredientsPrice) * quantity;
   }
-  if(!size){
-    checkErrors.size = "Lütfen pizza boyutu seçiniz";
-  }
-  if(!pizzaType){
-    checkErrors.pizzaType = "Lütfen hamur kalınlığı seçiniz";
-  }
-  if(ingredients.length<4){
-    checkErrors.ingredients = "En az 4 malzeme seçmelisiniz."
-  }
-  setErrorMessage(checkErrors);
-  if(Object.keys(checkErrors).length===0)
-    return  true
-  else
-  return false
- }
+  function formValidate() {
+    const checkErrors = {};
 
- 
+    if (!name || name.length < 3) {
+      checkErrors.name = "İsim en az 3 karakter olmalıdır";
+    }
+    if (!size) {
+      checkErrors.size = "Lütfen pizza boyutu seçiniz";
+    }
+    if (!pizzaType) {
+      checkErrors.pizzaType = "Lütfen hamur kalınlığı seçiniz";
+    }
+    if (ingredients.length < 4) {
+      checkErrors.ingredients = "En az 4 malzeme seçmelisiniz.";
+    }
+    setErrorMessage(checkErrors);
+    if (Object.keys(checkErrors).length === 0) return true;
+    else return false;
+  }
+
   function handleFormSubmit(event) {
-   event.preventDefault();
-   if(formValidate()===false)
-    {
+    event.preventDefault();
+    if (formValidate()===false) {
       return;
     }
     const postData = {
@@ -89,21 +85,22 @@ export default function OrderFormPage() {
       note,
       quantity,
       pizzaTotals: totalPrice(),
-    }
+    };
 
-      axios.post("https://reqres.in/api/pizza", postData)
-       .then(response =>{
+    axios
+      .post("https://reqres.in/api/pizza", postData)
+      .then((response) => {
         console.log("Sipariş Özeti", response.data);
-        history.push("./end")
-       })
-       .catch(error=>{
-        console.log("Sipariş başarısız",error);
-       });
- }
-  
- //Componentimin render edildiği kısım
- 
- return (
+        history.push("./end");
+      })
+      .catch((error) => {
+        console.log("Sipariş başarısız", error);
+      });
+  }
+
+  //Componentimin render edildiği kısım
+
+  return (
     <div>
       <Form className="form-content" onSubmit={handleFormSubmit}>
         <h3>Position Absolute Acı Pizza</h3>
@@ -213,8 +210,8 @@ export default function OrderFormPage() {
         </div>
         <div className="ingredients-div">
           {pizzaIngredients.map((ingredient) => (
-            <FormGroup key={ingredient} >
-              <Label >
+            <FormGroup key={ingredient}>
+              <Label>
                 <Input
                   type="checkbox"
                   onChange={() => handleIngredient(ingredient)}
@@ -268,7 +265,7 @@ export default function OrderFormPage() {
               </div>
             </div>
             <Button type="submit" className="submit-button">
-             Sipariş Ver
+              Sipariş Ver
             </Button>
           </div>
         </div>

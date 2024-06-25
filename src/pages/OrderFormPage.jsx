@@ -73,6 +73,8 @@ export default function OrderFormPage() {
   else
   return false
  }
+
+ 
   function handleFormSubmit(event) {
    event.preventDefault();
    if(formValidate()===false)
@@ -98,7 +100,10 @@ export default function OrderFormPage() {
         console.log("Sipariş başarısız",error);
        });
  }
-  return (
+  
+ //Componentimin render edildiği kısım
+ 
+ return (
     <div>
       <Form className="form-content" onSubmit={handleFormSubmit}>
         <h3>Position Absolute Acı Pizza</h3>
@@ -183,7 +188,7 @@ export default function OrderFormPage() {
             )}
             <FormGroup>
               <Input
-                type="select"
+                type="select" //dropdownlist
                 name="pizzaType"
                 value={pizzaType}
                 onChange={(event) => setPizzaType(event.target.value)}
@@ -208,8 +213,8 @@ export default function OrderFormPage() {
         </div>
         <div className="ingredients-div">
           {pizzaIngredients.map((ingredient) => (
-            <FormGroup key={ingredient} check>
-              <Label check>
+            <FormGroup key={ingredient} >
+              <Label >
                 <Input
                   type="checkbox"
                   onChange={() => handleIngredient(ingredient)}

@@ -11,6 +11,7 @@ export default function MainPage() {
   return (
     <div className="main-page">
       <main className="main-page-section">
+        <p id="fırsatı-kaçırma">fırsatı kaçırma</p>
         <h1>
           KOD ACIKTIRIR <br />
           PİZZA, DOYURUR

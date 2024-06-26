@@ -6,11 +6,23 @@
     font-family: "Roboto Condensed";
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:start;
     align-items: center;
     color: #faf7f2;
     height: 100vh;
+    
+    
 }
+#p-endPage{
+ font-family: "Satisfy";
+ color: #FDC913;
+ font-size: 32px;
+
+}
+#başlık-endPage{
+    font-size: 22px;
+}
+
 
 .endPageDiv p {
     font-size: 86px;
@@ -18,7 +30,49 @@
     line-height: 92px;
     letter-spacing: 1.5px;
     text-align: center;
+    align-items: center;
     margin: 0;
     padding: 0;
+   
 
+}
+.order-form p{
+    font-family: Barlow;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 24.76px;
+    text-align: left;
+    margin-bottom: 10px;
+   
+  }
+.order-toplam {
+    display: flex;
+    flex-direction: column;
+    justify-content:stretch;
+    margin-top: 50px;
+    border:1px solid white;
+  
+}
+.order-toplam h4{
+    width: 200px;
+    height: 10px;
+    top: 726px;
+    left: 834px;
+    gap: 0px;
+    border-radius: 6px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#seçimler-endpage {
+    font-size: 18px;
+    margin:0;
+    
+}
+#toplam-endpage {
+    font-size: 18px;
+    margin: 0;
 }

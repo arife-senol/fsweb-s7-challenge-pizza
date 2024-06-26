@@ -22,7 +22,8 @@ const pizzaIngredients = [
   "Ton balığı",
 ];
 
-export default function OrderFormPage() {
+export default function OrderFormPage({fromAppSetOrderData}) {
+  //const setOrderData = props.fromAppSetOrderData
   const [name, setName] = useState("");
   const [size, setSize] = useState("");
   const [pizzaType, setPizzaType] = useState("");
@@ -90,13 +91,16 @@ export default function OrderFormPage() {
     axios
       .post("https://reqres.in/api/pizza", postData)
       .then((response) => {
-        console.log("Sipariş Özeti", response.data);
+        console.log("Sipariş Özeti", response.data); 
+        fromAppSetOrderData(response.data);
+
         history.push("./end");
       })
       .catch((error) => {
         console.log("Sipariş başarısız", error);
       });
   }
+
 
   //Componentimin render edildiği kısım
 

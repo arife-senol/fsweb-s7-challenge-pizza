@@ -8,11 +8,15 @@ import { BrowserRouter } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import OrderFormPage from "./pages/OrderFormPage";
 import EndPage from "./pages/EndPage";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const [orderData,setOrderData]= useState({});
   return (
     <BrowserRouter>
+     <ToastContainer />
       <StaticHeader />
       <Switch>
         <Route exact path="/">

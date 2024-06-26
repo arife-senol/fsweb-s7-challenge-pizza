@@ -1,9 +1,11 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "./MainPage.css";
+import { toast } from "react-toastify";
 export default function MainPage() {
   let history = useHistory();
   function handleClick() {
+    toast("Sipariş sayfası yükleniyor..")
     history.push("./orderForm");
   }
   return (

@@ -3,6 +3,7 @@ import "./OrderFormPage.css";
 import axios from "axios";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const pizzaIngredients = [
   "Pepperoni",
@@ -93,10 +94,12 @@ export default function OrderFormPage({fromAppSetOrderData}) {
       .then((response) => {
         console.log("Sipariş Özeti", response.data); 
         fromAppSetOrderData(response.data);
-
+        toast.success("Siparişiniz hazırlanıyor :) ")
         history.push("./end");
       })
       .catch((error) => {
+
+        toast.error("Siparişiniz alınamadı :( ")
         console.log("Sipariş başarısız", error);
       });
   }

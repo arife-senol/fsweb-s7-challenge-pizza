@@ -11,7 +11,7 @@ export default function StaticHeader() {
         }
         }>
         <a href="/">
-        <img src="./Assets/mile1-assets/logo.png" alt="logo" />
+        <img src="./Assets/mile1-assets/logo.svg" alt="logo" />
         </a>
     </header>
        

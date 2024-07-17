@@ -1,5 +1,5 @@
 import React from 'react'
-
+import logo from '../../Assets/mile1-assets/logo.svg'
 export default function StaticHeader() {
   return (
     <header style={
@@ -11,7 +11,7 @@ export default function StaticHeader() {
         }
         }>
         <a href="/">
-        <img  src="../../Assets/mile1-assets/logo.svg" alt="logo" />
+        <img  src={logo} alt="logo" />
         </a>
     </header>
        
